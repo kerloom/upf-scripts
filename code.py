@@ -94,7 +94,7 @@ def segmentByFreq(notes, minSeparation = 100):
     return noteChange
     
 def saveMIDI(filename, noteOnsets, melody, tempo):
-    barOnsets = (noteOnsets*hopSize/float(Fs))*(tempo/60)    
+    barOnsets = (noteOnsets*hopSize/float(Fs))*(tempo/60)    #Onsets dado en barra
     notes = quantizeNote(melody)    
     track = 0
     time = 0       
@@ -108,8 +108,7 @@ def saveMIDI(filename, noteOnsets, melody, tempo):
     volume = 100
     
     for i in range(np.size(barOnsets)):
-        pitch = notes[noteOnsets[i]+1]
-        print pitch        
+        pitch = notes[noteOnsets[i]+1]  #leer el pitch en el siguiente frame al onset
         if pitch > 0:
             time = barOnsets[i]
             if i == np.size(barOnsets)-1:
