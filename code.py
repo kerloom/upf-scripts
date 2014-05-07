@@ -2,7 +2,8 @@
 
 ##########################
 #
-#Code to extract Pitch
+#Code to extract Pitch and save it to a MIDI file.
+#Needs improvement in onset detection, and pitch detection could be improved as well
 #
 ##########################
 
